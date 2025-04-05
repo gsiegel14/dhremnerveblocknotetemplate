@@ -145,12 +145,18 @@
             <h2>ED Ultrasound-Guided Nerve Block Procedure Flowchart</h2>
             <!-- Interactive flow container -->
             <div id="flowContainer">
+              <!-- Workflow instruction header - now at the top before flowNode1 -->
+              <h3 style="color: #f56a6a; text-align: center; margin-bottom: 20px; text-decoration: underline; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">ED US GUIDED NERVE BLOCK WORKFLOW INSTRUCTIONS (REVIEW IF NEED)</h3>
+              
               <!-- Node 1: Start -->
               <div id="flowNode1" class="mb-4">
                 <p class="mb-2"><strong>Patient Presents with Condition Potentially Amenable to Nerve Block</strong><br>
                   (e.g., Fracture, Dislocation, Abscess I&D, Complex Laceration, Severe Pain)
                 </p>
-                <button type="button" class="button primary small" onclick="goToFlowNode('flowNode2')">Next</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode2')">Next</button>
+                </div>
               </div>
 
               <!-- Node 2: Initial Assessment -->
@@ -158,24 +164,33 @@
                 <p class="mb-2"><strong>Initial Patient Assessment & Pain Management Needs</strong><br>
                   (History, Physical Exam, Vitals, Pain Score)
                 </p>
-                <button type="button" class="button primary small" onclick="goToFlowNode('flowNode3')">Next</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode1')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode3')">Next</button>
+                </div>
               </div>
 
               <!-- Node 3: Indicated? -->
               <div id="flowNode3" class="mb-4 hidden">
-                <h3 style="color: #f56a6a; text-align: center; margin-bottom: 15px; text-decoration: underline;">ED US GUIDED NERVE BLOCK WORKFLOW INSTRUCTIONS (REVIEW IF NEED)</h3>
                 <p class="mb-2"><strong>Decision:</strong> Is a Regional Nerve Block Indicated?
                   <span class="flow-decision" onclick="goToFlowNode('flowNode4Yes')">Yes</span> /
                   <span class="flow-decision" onclick="goToFlowNode('flowNode4No')">No</span>
                   <br>
                   (Consider Alternatives: Procedural Sedation, Systemic Analgesia)
                 </p>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode2')">Back</button>
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                </div>
               </div>
 
               <!-- Node 4a: Not Indicated -->
               <div id="flowNode4No" class="mb-4 hidden">
                 <p class="mb-2"><strong>Provide Alternative Analgesia/Anesthesia.</strong> (End)</p>
-                <button type="button" class="button small" onclick="goToFlowNode('flowNode3', true)">Back</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode3')">Back</button>
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                </div>
               </div>
               
               <!-- Node 4b: Indicated -->
@@ -183,10 +198,10 @@
                 <p class="mb-2"><strong>Assess for Contraindications</strong><br>
                   (Patient Refusal, Allergy to Local Anesthetic, Infection at Injection Site, Severe Coagulopathy, Pre-existing Neurologic Deficit in Distribution, Inability to Cooperate)
                 </p>
-                <ul class="actions small">
-                  <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode5')">Next</button></li>
-                  <li><button type="button" class="button" onclick="goToFlowNode('flowNode3', true)">Back</button></li>
-                </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode3')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode5')">Next</button>
+                </div>
               </div>
 
               <!-- Node 5: Contraindications? -->
@@ -195,13 +210,19 @@
                   <span class="flow-decision" onclick="goToFlowNode('flowNode5Yes')">Yes</span> /
                   <span class="flow-decision" onclick="goToFlowNode('flowNode5No')">No</span>
                 </p>
-                <button type="button" class="button small mt-2" onclick="goToFlowNode('flowNode4Yes', true)">Back</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode4Yes')">Back</button>
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                </div>
               </div>
 
               <!-- Node 5a: Contra -> End -->
               <div id="flowNode5Yes" class="mb-4 hidden">
                 <p class="mb-2"><strong>Reconsider Block / Choose Alternative.</strong> (End)</p>
-                <button type="button" class="button small" onclick="goToFlowNode('flowNode5', true)">Back</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode5')">Back</button>
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                </div>
               </div>
               
               <!-- Node 5b: No Contra -->
@@ -209,10 +230,10 @@
                 <p class="mb-2"><strong>Determine Appropriate Nerve Block Based on Anatomical Location & Indication</strong><br>
                   (See Block Selection Sub-Chart Below)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode6')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode5', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode5')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode6')">Next</button>
+                </div>
               </div>
 
               <!-- Node 6: Informed Consent -->
@@ -220,10 +241,10 @@
                 <p class="mb-2"><strong>Obtain Informed Consent</strong><br>
                   (Explain Procedure, Risks (Bleeding, Infection, Nerve Injury, LAST, Failure), Benefits, Alternatives)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode7')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode5No', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode5No')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode7')">Next</button>
+                </div>
               </div>
 
               <!-- Node 7: Gather Equipment -->
@@ -233,10 +254,10 @@
                   Needles (Block Needle, +/- Skin Wheal), Syringes, Chosen Local Anesthetic (Calculate Safe Dose!),<br>
                   Saline for Hydrodissection (Optional), Lipid Emulsion Readily Available)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode8')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode6', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode6')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode8')">Next</button>
+                </div>
               </div>
 
               <!-- Node 8: Prepare Patient -->
@@ -245,10 +266,10 @@
                   (Positioning for Optimal Access & Patient Comfort, IV Access Recommended,<br>
                   Apply Monitors: Pulse Oximetry, +/- Cardiac Monitor, +/- BP Cuff)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode9')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode7', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode7')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode9')">Next</button>
+                </div>
               </div>
 
               <!-- Node 9: TIME OUT -->
@@ -257,10 +278,10 @@
                   (Confirm: Patient ID, Procedure, Site/Side, Allergies, Anesthetic & Dose, Consent, Correct Equipment,<br>
                   Availability of Resuscitation Meds/Equipment including Lipid Emulsion)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode10')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode8', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode8')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode10')">Next</button>
+                </div>
               </div>
 
               <!-- Node 10: Pre-Scan -->
@@ -268,19 +289,19 @@
                 <p class="mb-2"><strong>Perform Pre-Scan with Ultrasound</strong><br>
                   (Identify Target Nerve(s), Surrounding Anatomy (Vessels, Pleura, Bone), Determine Optimal Needle Trajectory (In-Plane vs. Out-of-Plane))
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode11')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode9', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode9')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode11')">Next</button>
+                </div>
               </div>
 
               <!-- Node 11: Sterile Prep -->
               <div id="flowNode11" class="mb-4 hidden">
                 <p class="mb-2"><strong>Sterile Prep & Drape Injection Site</strong></p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode12')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode10', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode10')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode12')">Next</button>
+                </div>
               </div>
 
               <!-- Node 12: Perform Block -->
@@ -289,19 +310,19 @@
                   (Maintain Sterile Technique, Visualize Needle Tip AT ALL TIMES, Use Hydrodissection PRN,<br>
                   Inject Anesthetic Slowly, Aspirate Frequently, Observe Spread Around Target Nerve, Avoid Intraneural/Intravascular Injection)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode13')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode11', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode11')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode13')">Next</button>
+                </div>
               </div>
 
               <!-- Node 13: Remove Needle -->
               <div id="flowNode13" class="mb-4 hidden">
                 <p class="mb-2"><strong>Safely Remove Needle & Apply Dressing</strong></p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode14')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode12', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode12')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode14')">Next</button>
+                </div>
               </div>
 
               <!-- Node 14: Post-Procedure Monitoring -->
@@ -313,10 +334,10 @@
                   <strong>Systemic:</strong> LAST (Local Anesthetic Systemic Toxicity), Allergic Reaction. <br>
                   <strong>Delayed:</strong> Nerve Injury, Infection.
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode15')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode13', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode13')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode15')">Next</button>
+                </div>
               </div>
 
               <!-- Node 15: Document Procedure -->
@@ -326,10 +347,10 @@
                   Anesthetic Type & Volume/Dose, Needle Used, Any Complications,<br>
                   Post-Procedure Assessment/Neuro Exam)
                 </p>
-                 <ul class="actions small">
-                   <li><button type="button" class="button primary" onclick="goToFlowNode('flowNode16')">Next</button></li>
-                   <li><button type="button" class="button" onclick="goToFlowNode('flowNode14', true)">Back</button></li>
-                 </ul>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode14')">Back</button>
+                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode16')">Next</button>
+                </div>
               </div>
 
               <!-- Node 16: Post-Procedure Instructions -->
@@ -338,7 +359,10 @@
                   (Expected Duration, Signs of Complications, Limb Protection if Numb/Weak, Follow-up Plan)
                 </p>
                 <p class="mb-2"><strong>End:</strong> Procedure Complete / Patient Disposition</p>
-                <button type="button" class="button small" onclick="goToFlowNode('flowNode15', true)">Back</button>
+                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                  <button type="button" class="button small" onclick="goToFlowNode('flowNode15')">Back</button>
+                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                </div>
               </div>
 
               <hr/> <!-- Use Phantom hr -->

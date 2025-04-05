@@ -272,96 +272,51 @@
                 </div>
               </div>
 
-              <!-- Node 9: TIME OUT -->
+              <!-- Node 9: Post-Procedure Care -->
               <div id="flowNode9" class="mb-4 hidden">
-                <p class="mb-2"><strong>Perform Universal Protocol / TIME OUT</strong><br>
-                  (Confirm: Patient ID, Procedure, Site/Side, Allergies, Anesthetic & Dose, Consent, Correct Equipment,<br>
-                  Availability of Resuscitation Meds/Equipment including Lipid Emulsion)
-                </p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <h4 class="mb-2">Post-Procedure Care</h4>
+                <div class="post-procedure mb-3 p-3 border rounded">
+                  <p><strong>Expected Duration:</strong> Anesthesia typically lasts 1-8 hours (depending on anesthetic used). Motor function may return before sensation.</p>
+                  <p><strong>Signs of Complications:</strong> Monitor for unusual pain, swelling, redness, fever, numbness lasting >24 hours, or systemic symptoms (dizziness, metallic taste, seizures).</p>
+                  <p><strong>Limb Protection if Numb/Weak:</strong> Avoid weight-bearing on numb extremities. Protect from heat/cold/pressure. Consider immobilization if appropriate.</p>
+                  <p><strong>Follow-up Plan:</strong> Return to ED for concerning symptoms. Follow up with primary care or specialist as indicated.</p>
+                </div>
+                <div class="button-container d-flex justify-content-between">
                   <button type="button" class="button small" onclick="goToFlowNode('flowNode8')">Back</button>
                   <button type="button" class="button primary small" onclick="goToFlowNode('flowNode10')">Next</button>
                 </div>
               </div>
 
-              <!-- Node 10: Pre-Scan -->
+              <!-- Node 10: Procedure Complete / Patient Disposition -->
               <div id="flowNode10" class="mb-4 hidden">
-                <p class="mb-2"><strong>Perform Pre-Scan with Ultrasound</strong><br>
-                  (Identify Target Nerve(s), Surrounding Anatomy (Vessels, Pleura, Bone), Determine Optimal Needle Trajectory (In-Plane vs. Out-of-Plane))
-                </p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode9')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode11')">Next</button>
+                <h4 class="mb-2 text-center">Procedure Complete / Patient Disposition</h4>
+                <div class="text-center mb-4 p-3 border rounded procedure-complete">
+                  <p>✅ Nerve block procedure has been completed</p>
+                  <p>✅ Post-procedure instructions provided to patient</p>
+                  <p>✅ Documentation completed</p>
+                  <p>✅ Patient disposition determined</p>
+                </div>
+                <div class="text-center">
+                  <button type="button" class="button primary finish-button" onclick="resetWorkflow()">Finish</button>
                 </div>
               </div>
 
-              <!-- Node 11: Sterile Prep -->
-              <div id="flowNode11" class="mb-4 hidden">
-                <p class="mb-2"><strong>Sterile Prep & Drape Injection Site</strong></p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode10')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode12')">Next</button>
+              <!-- Node for Stop and Reconsider (when NO is selected) -->
+              <div id="flowNodeStop" class="mb-4 hidden">
+                <h4 class="mb-2 text-center text-danger">⚠️ Stop and Reconsider Procedure</h4>
+                <div class="stop-reconsider mb-3 p-3 border border-danger rounded bg-light">
+                  <p>Based on your selection, this patient may not be an appropriate candidate for a nerve block procedure at this time.</p>
+                  <p><strong>Consider alternative approaches:</strong></p>
+                  <ul>
+                    <li>Procedural sedation</li>
+                    <li>Systemic analgesia</li>
+                    <li>Non-pharmacological methods</li>
+                    <li>Consultation with anesthesia</li>
+                    <li>Reassessment after addressing contraindications</li>
+                  </ul>
                 </div>
-              </div>
-
-              <!-- Node 12: Perform Block -->
-              <div id="flowNode12" class="mb-4 hidden">
-                <p class="mb-2"><strong>Perform Ultrasound-Guided Nerve Block</strong><br>
-                  (Maintain Sterile Technique, Visualize Needle Tip AT ALL TIMES, Use Hydrodissection PRN,<br>
-                  Inject Anesthetic Slowly, Aspirate Frequently, Observe Spread Around Target Nerve, Avoid Intraneural/Intravascular Injection)
-                </p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode11')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode13')">Next</button>
-                </div>
-              </div>
-
-              <!-- Node 13: Remove Needle -->
-              <div id="flowNode13" class="mb-4 hidden">
-                <p class="mb-2"><strong>Safely Remove Needle & Apply Dressing</strong></p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode12')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode14')">Next</button>
-                </div>
-              </div>
-
-              <!-- Node 14: Post-Procedure Monitoring -->
-              <div id="flowNode14" class="mb-4 hidden">
-                <p class="mb-2"><strong>Post-Procedure Assessment & Monitoring</strong><br>
-                  Assess Block Efficacy: Check Sensory (+/- Motor) function after expected onset time (5-30 min).<br>
-                  Monitor for Complications: <br>
-                  <strong>Local:</strong> Hematoma, Pain at site. <br>
-                  <strong>Systemic:</strong> LAST (Local Anesthetic Systemic Toxicity), Allergic Reaction. <br>
-                  <strong>Delayed:</strong> Nerve Injury, Infection.
-                </p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode13')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode15')">Next</button>
-                </div>
-              </div>
-
-              <!-- Node 15: Document Procedure -->
-              <div id="flowNode15" class="mb-4 hidden">
-                <p class="mb-2"><strong>Document Procedure Thoroughly</strong><br>
-                  (Indication, Consent, Time Out Details, Block Performed, US Guidance Used,<br>
-                  Anesthetic Type & Volume/Dose, Needle Used, Any Complications,<br>
-                  Post-Procedure Assessment/Neuro Exam)
-                </p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode14')">Back</button>
-                  <button type="button" class="button primary small" onclick="goToFlowNode('flowNode16')">Next</button>
-                </div>
-              </div>
-
-              <!-- Node 16: Post-Procedure Instructions -->
-              <div id="flowNode16" class="mb-4 hidden">
-                <p class="mb-2"><strong>Provide Post-Procedure Instructions</strong><br>
-                  (Expected Duration, Signs of Complications, Limb Protection if Numb/Weak, Follow-up Plan)
-                </p>
-                <p class="mb-2"><strong>End:</strong> Procedure Complete / Patient Disposition</p>
-                <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 10px;">
-                  <button type="button" class="button small" onclick="goToFlowNode('flowNode15')">Back</button>
-                  <button type="button" class="button small" disabled style="visibility: hidden;">Next</button>
+                <div class="text-center">
+                  <button type="button" class="button primary" onclick="resetWorkflow()">Start Over</button>
                 </div>
               </div>
 
@@ -609,318 +564,7 @@
                   <button type="button" id="addBlockButton" class="button primary small">Add Another Block</button>
                   <button type="button" id="resetBlocksButton" class="button small">Reset All Blocks</button>
               </div>
-
-              <!-- END NEW Streamlined Block Selection -->
-
             </div>
-          </div>
-
-          <!-- Step 2: Indication -->
-          <div class="step" id="step2">
-            <!-- Indication branching -->
-            <div class="input-group">
-              <label class="input-label">Primary Category:</label>
-              <select id="primaryCategory" onchange="handlePrimaryChange(); handleAllIndicationChanges();" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Secondary Category:</label>
-              <select id="secondaryCategory" onchange="handleSecondaryChange(); handleAllIndicationChanges();" class="border p-2 rounded w-full">
-                <option value="">--</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Tertiary Category:</label>
-              <select id="tertiaryCategory" onchange="handleAllIndicationChanges();" class="border p-2 rounded w-full">
-                <option value="">--</option>
-              </select>
-            </div>
-            <!-- Free text for "Other" -->
-            <div class="input-group" id="otherCategoryContainer" style="display: none;">
-              <label class="input-label" for="otherCategoryText">Details for Other:</label>
-              <textarea id="otherCategoryText" class="border p-2 rounded w-full" placeholder="Please specify..."></textarea>
-            </div>
-          </div>
-
-          <!-- Step 3: Pre-Procedure -->
-          <div class="step" id="step3">
-            <!-- Consent -->
-            <div class="input-group">
-              <label class="input-label">Consent Obtained From:</label>
-              <select id="consentObtainedFrom" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="patient">Patient</option>
-                <option value="surrogate">Surrogate/Family</option>
-                <option value="implied">Implied (Emergent)</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Consent Type:</label>
-              <select id="consentType" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="verbal">Verbal</option>
-                <option value="written">Written</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Capacity Assessed?</label>
-              <select id="capacityAssessed" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-            <!-- Time Out / Pre-Procedure Pause -->
-            <div class="section-title">Time Out / Pre-Procedure Pause</div>
-            <div class="input-group">
-              <label>
-                <input type="checkbox" id="timeOutPerformed" class="mr-2" />
-                Time Out Performed
-              </label>
-            </div>
-            <!-- Patient Assessment -->
-            <div class="section-title">Patient Assessment (Pre-Block)</div>
-            <div class="input-group">
-              <label class="input-label" for="baselinePainScore">Baseline Pain Score (0-10):</label>
-              <input type="number" id="baselinePainScore" class="border p-2 rounded w-full" min="0" max="10">
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="baselineSensation">Baseline Sensation:</label>
-              <select id="baselineSensation" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="intact">Intact</option>
-                <option value="impaired">Impaired</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="baselineMotor">Baseline Motor Function:</label>
-              <select id="baselineMotor" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="intact">Intact</option>
-                <option value="impaired">Impaired</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="baselinePulses">Distal Pulses:</label>
-              <select id="baselinePulses" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="palpable">Palpable</option>
-                <option value="dopplerable">Dopplerable</option>
-                <option value="absent">Absent</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="capillaryRefill">Capillary Refill (sec):</label>
-              <input type="number" id="capillaryRefill" class="border p-2 rounded w-full" step="0.1">
-            </div>
-            <div class="input-group">
-              <label class="input-label">Allergies:</label>
-              <textarea id="allergies" class="border p-2 rounded w-full" placeholder="e.g. No Known Drug Allergies"></textarea>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="anticoagulation">Anticoagulation/Bleeding Risk:</label>
-              <input type="text" id="anticoagulation" class="border p-2 rounded w-full" placeholder="e.g. On Warfarin, Last dose...">
-            </div>
-          </div>
-
-          <!-- Step 4: Procedure Details -->
-          <div class="step" id="step4">
-            <div class="input-group">
-              <label class="input-label">Block Performed By:</label>
-              <select id="blockPerformedBy" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="attending">Attending</option>
-                <option value="resident">Resident/Fellow</option>
-                <option value="app">APP</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Location Performed:</label>
-              <select id="locationPerformed" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="ed-room">ED Room</option>
-                <option value="trauma-bay">Trauma Bay</option>
-                <option value="procedure-room">Procedure Room</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Block Type:</label>
-              <select id="blockType" name="blockType">
-                <option value="">Select (or pre-filled from Step 1)...</option>
-                <!-- Head/Neck -->
-                <option value="superficial_cervical_plexus">Superficial Cervical Plexus</option>
-                <option value="spg">Pterygopalatine Ganglion (SPG)</option>
-                <option value="stellate_ganglion">Stellate Ganglion</option>
-                <!-- Upper Extremity -->
-                <option value="interscalene">Interscalene</option>
-                <option value="supraclavicular">Supraclavicular</option>
-                <option value="suprascapular_ap">Anterior & Posterior Suprascapular</option>
-                <option value="axillary">Axillary</option>
-                <option value="infraclavicular">Infraclavicular</option>
-                <option value="raptir">RAPTIR</option>
-                <option value="forearm_median">Median (Forearm Level)</option>
-                <option value="forearm_radial">Radial (Forearm Level)</option>
-                <option value="forearm_ulnar">Ulnar (Forearm Level)</option>
-                <option value="wrist_median">Median (Wrist Level)</option>
-                <option value="wrist_radial">Radial (Wrist Level)</option>
-                <option value="wrist_ulnar">Ulnar (Wrist Level)</option>
-                <option value="digital_usg">Digital (USG)</option>
-                <!-- Trunk -->
-                <option value="sap">Serratus Anterior Plane (SAP)</option>
-                <option value="esp_thoracic">Erector Spinae (Thoracic)</option>
-                <option value="intercostal">Intercostal</option>
-                <option value="pecs">PECS Block</option>
-                <option value="parasternal">Parasternal</option>
-                <option value="clavipectoral">Clavipectoral</option>
-                <option value="tap">Transversus Abdominis Plane (TAP)</option>
-                <option value="rectus_sheath">Rectus Sheath</option>
-                <option value="ql">Quadratus Lumborum (QL)</option>
-                <option value="esp_lumbar_sacral">Erector Spinae (Lumbar / Sacral)</option>
-                <option value="dorsal_penile">Dorsal Penile</option>
-                <!-- Lower Extremity -->
-                <option value="fascia_iliaca_supra">Fascia Iliaca (Suprainguinal)</option>
-                <option value="fascia_iliaca_infra">Fascia Iliaca (Infrainguinal)</option>
-                <option value="femoral">Femoral</option>
-                <option value="peng">PENG</option>
-                <option value="lfcn">Lateral Femoral Cutaneous</option>
-                <option value="genicular">Genicular Block</option>
-                <option value="adductor_canal">Adductor Canal Block</option>
-                <option value="sciatic_transgluteal">Sciatic (Transgluteal)</option>
-                <option value="sciatic_popliteal">Sciatic (Popliteal)</option>
-                <option value="ankle">Ankle Block (Specify Nerves Below)</option>
-                <!-- Other/Obsolete -->
-                <option value="hematoma-block">Hematoma Block</option>
-                <option value="other">Other (Specify Below or from Step 1)</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label">Laterality:</label>
-              <select id="laterality" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="left">Left</option>
-                <option value="right">Right</option>
-                <option value="bilateral">Bilateral</option>
-              </select>
-            </div>
-            <div class="section-title">Aseptic Technique</div>
-            <div class="input-group">
-              <div class="checkbox-group">
-                <label><input type="checkbox" id="prepChlorhexidine" /> Chlorhexidine</label>
-                <label><input type="checkbox" id="prepBetadine" /> Betadine</label>
-                <label><input type="checkbox" id="prepAlcohol" /> Alcohol</label>
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="checkbox-group">
-                <label><input type="checkbox" id="sterileGloves" /> Sterile Gloves</label>
-                <label><input type="checkbox" id="sterileProbeCover" /> Sterile Probe Cover</label>
-                <label><input type="checkbox" id="sterileDrape" /> Sterile Drape</label>
-              </div>
-            </div>
-            <div class="section-title">Ultrasound Guidance</div>
-            <div class="input-group">
-              <label><input type="checkbox" id="useUltrasound" onclick="toggleUltrasoundDetails()" /> Used Ultrasound Guidance</label>
-            </div>
-            <div id="ultrasoundDetails" style="display: none;">
-              <div class="input-group">
-                <label class="input-label" for="machineUsed">Machine Used:</label>
-                <input type="text" id="machineUsed" class="border p-2 rounded w-full" />
-              </div>
-              <div class="input-group">
-                <label class="input-label">Probe Type:</label>
-                <select id="probeType" class="border p-2 rounded w-full">
-                  <option value="">Select</option>
-                  <option value="linear">Linear</option>
-                  <option value="curvilinear">Curvilinear</option>
-                </select>
-              </div>
-              <div class="input-group">
-                <label class="input-label">Needle Approach:</label>
-                <select id="needleApproach" class="border p-2 rounded w-full">
-                  <option value="">Select</option>
-                  <option value="in-plane">In-Plane</option>
-                  <option value="out-of-plane">Out-of-Plane</option>
-                </select>
-              </div>
-            </div>
-            <div class="section-title">Local Anesthetic</div>
-            <div class="input-group">
-              <label class="input-label">Medication:</label>
-              <select id="localAnesthetic" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="lidocaine">Lidocaine</option>
-                <option value="bupivacaine">Bupivacaine</option>
-                <option value="ropivacaine">Ropivacaine</option>
-                <option value="mepivacaine">Mepivacaine</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="concentration">Concentration (%):</label>
-              <input type="number" step="0.1" id="concentration" class="border p-2 rounded w-full" />
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="volumeUsed">Volume Used (mL):</label>
-              <input type="number" step="0.1" id="volumeUsed" class="border p-2 rounded w-full" />
-            </div>
-            <div class="input-group">
-              <label class="input-label">Additives:</label>
-              <div class="checkbox-group">
-                <label><input type="checkbox" id="epiAdditive" /> Epinephrine</label>
-                <label><input type="checkbox" id="dexAdditive" /> Dexamethasone</label>
-                <label><input type="checkbox" id="bicarbAdditive" /> Sodium Bicarbonate</label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 5: Post-Procedure -->
-          <div class="step" id="step5">
-            <div class="input-group">
-              <label class="input-label">Immediate Complications:</label>
-              <div class="checkbox-group">
-                <label><input type="checkbox" id="noComplications" onclick="handleComplicationsCheckbox(this)" /> None</label>
-                <label><input type="checkbox" id="minorParesthesia" onclick="handleComplicationsCheckbox(this)" /> Minor (transient paresthesia)</label>
-                <label><input type="checkbox" id="vascularPuncture" onclick="handleComplicationsCheckbox(this)" /> Vascular Puncture (Minor)</label>
-                <label><input type="checkbox" id="hematoma" onclick="handleComplicationsCheckbox(this)" /> Hematoma</label>
-                <label><input type="checkbox" id="LAST" onclick="handleComplicationsCheckbox(this)" /> Signs of LAST</label>
-              </div>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="postBlockPainScore">Post-Block Pain Score (0-10):</label>
-              <input type="number" id="postBlockPainScore" class="border p-2 rounded w-full" min="0" max="10">
-            </div>
-            <div class="input-group">
-              <label class="input-label">Block Efficacy:</label>
-              <select id="blockEfficacy" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="complete">Complete Sensory Loss</option>
-                <option value="partial">Partial Sensory Loss</option>
-                <option value="none">No Effect</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="postBlockNeurovascular">Repeat Neurovascular Exam:</label>
-              <textarea id="postBlockNeurovascular" class="border p-2 rounded w-full" placeholder="Compare to baseline..."></textarea>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="patientResponse">Patient Response:</label>
-              <select id="patientResponse" class="border p-2 rounded w-full">
-                <option value="">Select</option>
-                <option value="tolerated-well">Tolerated Well</option>
-                <option value="adverse-reaction">Adverse Reaction</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="planDisposition">Plan & Disposition:</label>
-              <textarea id="planDisposition" class="border p-2 rounded w-full" placeholder="e.g. Facilitated discharge, Pain control for admission, etc."></textarea>
-            </div>
-          </div>
-
-          <!-- Navigation Buttons -->
-          <div style="display: flex; justify-content: space-between; margin-top: 20px; padding: 15px 0;">
-            <button type="button" class="button" onclick="prevStep()">Back</button>
-            <button type="button" class="button primary" onclick="nextStep()" id="nextButton">Next</button>
           </div>
         </form>
       </div>
@@ -1907,6 +1551,60 @@
         }
       }
     }
+
+    // Function to handle No selections
+    function handleNoSelection(currentNode) {
+      goToFlowNode('flowNodeStop');
+    }
+
+    // Function to reset workflow to beginning
+    function resetWorkflow() {
+      // Hide all nodes
+      const allNodes = document.querySelectorAll('[id^="flowNode"]');
+      allNodes.forEach(node => {
+        node.classList.add('hidden');
+      });
+      
+      // Show first node
+      document.getElementById('flowNode1').classList.remove('hidden');
+      
+      // Reset all inputs
+      document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.checked = false;
+      });
+      document.querySelectorAll('select').forEach(select => {
+        select.selectedIndex = 0;
+      });
+      document.querySelectorAll('textarea').forEach(textarea => {
+        textarea.value = '';
+      });
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    }
+
+    // Update the existing yes/no radio button handlers to direct to stop screen on "No"
+    document.addEventListener('DOMContentLoaded', function() {
+      // For node 3 - Is a Regional Nerve Block Indicated? 
+      const indicatedNoRadio = document.querySelector('input[name="indicated"][value="no"]');
+      if (indicatedNoRadio) {
+        indicatedNoRadio.addEventListener('change', function() {
+          if (this.checked) {
+            handleNoSelection('flowNode3');
+          }
+        });
+      }
+
+      // For node 4 - Are there any contraindications?
+      const contraindicationsYesRadio = document.querySelector('input[name="contraindications"][value="yes"]');
+      if (contraindicationsYesRadio) {
+        contraindicationsYesRadio.addEventListener('change', function() {
+          if (this.checked) {
+            handleNoSelection('flowNode4');
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>

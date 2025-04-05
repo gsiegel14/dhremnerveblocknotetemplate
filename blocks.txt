@@ -1,0 +1,126 @@
+code: "64999",
+description: "Unlisted procedure, nervous system. Infiltration near the superficial branches of the cervical plexus (C2–C4). Useful for analgesia of the lateral neck and over the clavicle. Common in injuries to the clavicle region or lateral neck lacerations.",
+link: "https://www.aapc.com/codes/cpt-codes/64999",
+code: "64505",
+description: "Injection of anesthetic at the sphenopalatine ganglion (pterygopalatine ganglion) in the posterior nasal cavity, typically via intranasal catheter or soaked swabs. Used for refractory headaches (cluster headaches, migraines) and facial pain syndromes.",
+link: "https://www.aapc.com/codes/cpt-codes/64505"
+code: "64510",
+description: "Injection of local anesthetic around the stellate (cervicothoracic) ganglion. Indicated for complex regional pain syndrome or vascular insufficiency in the upper extremity. Also used for refractory facial pain syndromes.",
+link: "https://www.aapc.com/codes/cpt-codes/64510"
+code: "64999",
+description: "Unlisted procedure, nervous system. Document technique in free text for clarity. This code covers any head or neck nerve block not specifically described in the CPT coding system.",
+link: "https://www.aapc.com/codes/cpt-codes/64999",
+code: "64415",
+description: "Brachial plexus, single injection. Targets roots/trunks of the brachial plexus in the interscalene groove for shoulder and upper arm anesthesia. Common in the ED for shoulder dislocations or proximal humerus fractures to provide pain relief and muscle relaxation.",
+link: "https://www.aapc.com/codes/cpt-codes/64415"
+code: "64415",
+description: "Brachial plexus, single injection. Blocks brachial plexus at the trunk/division level, providing anesthesia to the arm/hand. Often called 'the spinal of the arm' due to its dense, complete upper extremity anesthesia. Useful for extensive upper extremity trauma like forearm fractures.",
+link: "https://www.aapc.com/codes/cpt-codes/64415"
+code: "64418",
+description: "Suprascapular nerve. Injection near suprascapular notch (posterior) or near the scapular spine (anterior approach). Used for shoulder analgesia. Covers approximately 70% of shoulder sensory innervation and is often combined with an axillary nerve block for complete shoulder analgesia.",
+link: "https://www.aapc.com/codes/cpt-codes/64418"
+code: "64417",
+description: "Axillary (circumflex) nerve. Targets the axillary nerve in the quadrilateral space region for shoulder analgesia. Often performed with a suprascapular block to provide complete shoulder anesthesia for dislocations or proximal humerus fractures.",
+link: "https://www.aapc.com/codes/cpt-codes/64417"
+code: "64415",
+description: "Brachial plexus, single injection. Targets the cords of the brachial plexus beneath the clavicle. Achieves anesthesia of the elbow, forearm, and hand (and partially the upper arm). Commonly used for elbow fractures, forearm injuries, or hand injuries in the ED.",
+link: "https://www.aapc.com/codes/cpt-codes/64415"
+code: "64415",
+description: "Brachial plexus, single injection. A variation of the infraclavicular block with a retroclavicular needle entry. The RAPTIR (Retroclavicular Approach to Infraclavicular Region) technique allows easier ultrasound visualization and reduces risk to vascular structures.",
+link: "https://www.aapc.com/codes/cpt-codes/64415"
+code: "64450",
+description: "Other peripheral nerve. Injection around the median nerve at mid-forearm or distal forearm. This numbs the volar (palmar) aspect of the thumb, index, middle, and half of the ring finger, as well as the thenar eminence. Indicated for hand lacerations on the radial side.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection near the radial nerve in the forearm (often superficial radial branch). Produces anesthesia over the dorsal radial aspect of the hand – including the back of the thumb, index, and middle hand area. Used for injuries to the dorsum of the hand.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection near the ulnar nerve at the distal forearm. Causes anesthesia of the little finger, ulnar half of the ring finger, and the ulnar side of the hand (including the hypothenar eminence). Used for lacerations or crush injuries to the ulnar side of the hand/fingers.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Infiltration at or proximal to the carpal tunnel to block the median nerve. Helpful for carpal tunnel syndrome pain relief, distal radius fractures (to alleviate median nerve compression pain), or procedures on the palmar aspect of the hand.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Infiltration around the superficial radial nerve near the radial styloid. Often used for painful first web space lacerations or debridement of wounds on the back of the hand. Blocks sensation to the dorsal thumb and index finger area.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection at Guyon's canal for ulnar distribution. Blocks sensation to the little finger and ulnar half of the ring finger. In the ED, this is often done for ring finger or small finger injuries.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Provides anesthesia to an entire finger by blocking the digital nerves at the base of the finger. One of the most common ED nerve blocks, used for finger laceration repair, nail bed injury treatment, or finger fracture reduction. Effective in both adults and children.",
+link: "https://www.aapc.com/codes/cpt-codes/64450",
+code: "64999",
+description: "Unlisted procedure, nervous system. Regional block where anesthetic is injected deep to the serratus anterior muscle (at the mid-axillary line) to block the lateral cutaneous branches of multiple intercostal nerves. Effective for rib fracture pain or chest tube placements, providing broad anesthesia from roughly T2–T9 on one side.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64999",
+description: "Unlisted procedure, nervous system. Anesthetic injection in the plane deep to the erector spinae muscle adjacent to the thoracic spine. The anesthetic numbs the dorsal rami and lateral cutaneous branches of the spinal nerves, providing multi-level thoracic wall analgesia. Used for severe thoracic pain including rib fractures.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64420",
+description: "Intercostal, single level. Injection of local anesthetic in the intercostal space near the neurovascular bundle under the rib, numbing a specific intercostal nerve. Commonly used for pain relief from rib fractures or localized chest trauma. Each level treated is coded separately.",
+link: "https://www.aapc.com/codes/cpt-codes/64420",
+code: "64999",
+description: "Unlisted procedure, nervous system. Fascial plane block where local anesthetic is deposited between muscle layers of the chest to block the lateral and medial pectoral nerves (PECS I) and the anterior divisions of intercostal nerves (PECS II). Provides anesthesia to the upper anterior chest wall for chest trauma or clavicular fractures.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64999",
+description: "Unlisted procedure, nervous system. Injection near the sternal border to block anterior cutaneous branches of intercostal nerves. Useful for anterior chest wall procedures or midline chest trauma. Provides analgesia to the anterior chest in the sternal area.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64999",
+description: "Unlisted procedure, nervous system. Injection in the fascial plane beneath the clavicle and pectoral fascia for upper chest analgesia. Targets the cutaneous nerves of the upper anterior chest, providing relief for clavicular fractures or shoulder procedures.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64486",
+description: "Transversus abdominis plane (TAP) block, unilateral. Injection between internal oblique and transversus abdominis, anesthetizing T7-L1 ventral rami of the abdominal wall. Used for lower abdominal pain control or after abdominal surgery. Common for ED patients with abdominal wall injuries while awaiting surgical management.",
+link: "https://www.aapc.com/codes/cpt-codes/64486",
+code: "64486",
+description: "Same as TAP single injection. Anesthetic injection deep to the rectus abdominis muscle (within the rectus sheath) to block the terminal branches of the intercostal nerves (T7–T12). Produces anesthesia of the midline anterior abdominal wall around the umbilicus. Used for pain from abdominal wall hematomas or umbilical procedures.",
+link: "https://www.aapc.com/codes/cpt-codes/64486",
+code: "64999",
+description: "Unlisted procedure, nervous system. Local anesthetic deposited around the QL muscle, covering T12-L3 dermatomes (variable spread). This posterior abdominal wall block provides broader and potentially longer analgesia than a TAP block, covering the lateral and part of the anterior abdominal wall.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64999",
+description: "Unlisted procedure, nervous system. Injection deep to erector spinae at lower vertebral levels to provide analgesia for lumbar/sacral back pain or hip region. Similar to thoracic ESP but placed lower for back pain or posterior hip/pelvic pain management.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64450",
+description: "Other peripheral nerve. Injection at the base of the penis to block the dorsal nerves (branch of pudendal). Used for anesthesia of the penis during laceration repair, urethral catheterization, or circumcision procedures in the ED setting.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64999",
+description: "Unlisted procedure, nervous system. Injection above the inguinal ligament in the fascia iliaca compartment, spreading local anesthetic to block the femoral nerve, lateral femoral cutaneous nerve, and often the obturator nerve. Provides broad anesthesia to the front of the thigh and hip. Common for hip fracture analgesia in the ED.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64999",
+description: "Unlisted procedure, nervous system. Injection below the inguinal ligament in the fascia iliaca plane for proximal leg analgesia. Similar to the suprainguinal approach but with different spread characteristics. Used for femoral fractures and anterior thigh pain management.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64447",
+description: "Femoral nerve, single. Injection around the femoral nerve in the groin (femoral crease). Produces anesthesia of the anterior thigh, knee, and part of the medial lower leg. One of the most frequently used ED nerve blocks for pain control in femoral shaft fractures or hip fractures, allowing significant pain relief and easier splinting.",
+link: "https://www.aapc.com/codes/cpt-codes/64447"
+code: "64999",
+description: "Unlisted procedure, nervous system. Targets articular branches of femoral and obturator nerves to provide hip joint analgesia. The Pericapsular Nerve Group block targets the nerves that specifically innervate the hip joint while preserving more muscle strength than traditional blocks. Excellent for hip fracture pain management.",
+link: "https://www.aapc.com/codes/cpt-codes/64999"
+code: "64450",
+description: "Other peripheral nerve. Injection near the lateral femoral cutaneous nerve under the inguinal ligament, often for meralgia paresthetica or proximal lateral thigh analgesia. This provides numbness to the lateral aspect of the thigh without affecting motor function.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64454",
+description: "Injection(s), genicular nerve branches, including imaging guidance. Targets the major genicular branches (superomedial, superolateral, inferomedial) around the knee. This procedure blocks the sensory nerves to the knee joint without affecting the quadriceps or hamstring muscles, preserving strength while providing joint analgesia.",
+link: "https://www.aapc.com/codes/cpt-codes/64454"
+code: "64450",
+description: "Other peripheral nerve. Injection in the mid-thigh adductor canal to block the saphenous nerve (branch of femoral), providing medial lower leg/knee analgesia. Used for knee injuries or tibial plateau fractures where sensory blockade is desired without motor blockade of the quadriceps.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64445",
+description: "Sciatic nerve, single. Injection at the gluteal level of the sciatic nerve proximal to its bifurcation. Anesthetizes the posterior thigh, most of the lower leg, and foot. Often combined with a femoral block for complete lower limb coverage in major trauma cases.",
+link: "https://www.aapc.com/codes/cpt-codes/64445"
+code: "64445",
+description: "Sciatic nerve, single. Injection at the popliteal fossa targeting the tibial and common peroneal divisions of the sciatic nerve. Very useful for foot and ankle injuries, providing anesthesia for ankle fracture reduction or extensive foot trauma while preserving hamstring function.",
+link: "https://www.aapc.com/codes/cpt-codes/64445"
+code: "64450",
+description: "Other peripheral nerve. Injection near the posterior tibial nerve at the ankle (medial malleolus) for plantar foot anesthesia. Part of a complete ankle block, or can be performed individually for plantar foot injuries or procedures.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection near the sural nerve in the lateral foot/ankle area. Provides anesthesia to the lateral border of the foot and fifth toe region. Useful for lateral foot lacerations or procedures on the lateral foot margin.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection over the dorsum of foot near the extensor hallucis longus tendon to block the deep peroneal nerve. This provides anesthesia to the web space between the first and second toes and contributes to dorsal foot anesthesia.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Subcutaneous injection across the anterior ankle to block the superficial peroneal nerve. Provides anesthesia to most of the dorsum of the foot. Used for injuries or procedures on the top of the foot.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"
+code: "64450",
+description: "Other peripheral nerve. Injection anterior to the medial malleolus for medial foot/ankle analgesia by blocking the saphenous nerve. This covers the medial ankle and contributes to complete foot anesthesia when combined with other ankle block components.",
+link: "https://www.aapc.com/codes/cpt-codes/64450"

@@ -1,0 +1,317 @@
+<!-- Step 2: Indication -->
+<div class="step" id="step2">
+  <h2>2. Indication</h2>
+  <!-- Apply Phantom form field structure -->
+  <div class="fields">
+    <div class="field half">
+      <label for="primaryCategory">Primary Category:</label>
+      <select id="primaryCategory" name="primaryCategory" onchange="handlePrimaryChange(); handleAllIndicationChanges();">
+        <option value="">Select</option>
+      </select>
+    </div>
+    <div class="field half">
+      <label for="secondaryCategory">Secondary Category:</label>
+      <select id="secondaryCategory" name="secondaryCategory" onchange="handleSecondaryChange(); handleAllIndicationChanges();">
+        <option value="">--</option>
+      </select>
+    </div>
+    <div class="field"> <!-- Full width -->
+      <label for="tertiaryCategory">Tertiary Category:</label>
+      <select id="tertiaryCategory" name="tertiaryCategory" onchange="handleAllIndicationChanges();">
+        <option value="">--</option>
+      </select>
+    </div>
+    <!-- Free text for "Other" -->
+    <div class="field" id="otherCategoryContainer" style="display: none;">
+      <label for="otherCategoryText">Details for Other:</label>
+      <textarea id="otherCategoryText" name="otherCategoryText" placeholder="Please specify..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Step 3: Pre-Procedure -->
+<div class="step" id="step3">
+  <h2>3. Pre-Procedure Essentials</h2>
+  <!-- Consent -->
+  <div class="fields">
+    <div class="field third">
+      <label for="consentObtainedFrom">Consent Obtained From:</label>
+      <select id="consentObtainedFrom" name="consentObtainedFrom">
+        <option value="">Select</option>
+        <option value="patient">Patient</option>
+        <option value="surrogate">Surrogate/Family</option>
+        <option value="implied">Implied (Emergent)</option>
+      </select>
+    </div>
+    <div class="field third">
+      <label for="consentType">Consent Type:</label>
+      <select id="consentType" name="consentType">
+        <option value="">Select</option>
+        <option value="verbal">Verbal</option>
+        <option value="written">Written</option>
+      </select>
+    </div>
+    <div class="field third">
+      <label for="capacityAssessed">Capacity Assessed?</label>
+      <select id="capacityAssessed" name="capacityAssessed">
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+  </div>
+  <!-- Time Out / Pre-Procedure Pause -->
+  <h3>Time Out / Pre-Procedure Pause</h3>
+  <div class="field">
+    <input type="checkbox" id="timeOutPerformed" name="timeOutPerformed">
+    <label for="timeOutPerformed">Time Out Performed</label>
+  </div>
+  <!-- Patient Assessment -->
+  <h3>Patient Assessment (Pre-Block)</h3>
+  <div class="fields">
+    <div class="field quarter">
+      <label for="baselinePainScore">Baseline Pain Score (0-10):</label>
+      <input type="number" id="baselinePainScore" name="baselinePainScore" min="0" max="10">
+    </div>
+    <div class="field quarter">
+      <label for="baselineSensation">Baseline Sensation:</label>
+      <select id="baselineSensation" name="baselineSensation">
+        <option value="">Select</option>
+        <option value="intact">Intact</option>
+        <option value="impaired">Impaired</option>
+      </select>
+    </div>
+    <div class="field quarter">
+      <label for="baselineMotor">Baseline Motor Function:</label>
+      <select id="baselineMotor" name="baselineMotor">
+        <option value="">Select</option>
+        <option value="intact">Intact</option>
+        <option value="impaired">Impaired</option>
+      </select>
+    </div>
+    <div class="field quarter">
+      <label for="baselinePulses">Distal Pulses:</label>
+      <select id="baselinePulses" name="baselinePulses">
+        <option value="">Select</option>
+        <option value="palpable">Palpable</option>
+        <option value="dopplerable">Dopplerable</option>
+        <option value="absent">Absent</option>
+      </select>
+    </div>
+    <div class="field quarter"> <!-- Adjust grid as needed -->
+      <label for="capillaryRefill">Capillary Refill (sec):</label>
+      <input type="number" id="capillaryRefill" name="capillaryRefill" step="0.1">
+    </div>
+  </div>
+  <div class="field">
+    <label for="allergies">Allergies:</label>
+    <textarea id="allergies" name="allergies" placeholder="e.g. No Known Drug Allergies"></textarea>
+  </div>
+  <div class="field">
+    <label for="anticoagulation">Anticoagulation/Bleeding Risk:</label>
+    <input type="text" id="anticoagulation" name="anticoagulation" placeholder="e.g. On Warfarin, Last dose...">
+  </div>
+</div>
+
+<!-- Step 4: Procedure Details -->
+<div class="step" id="step4">
+  <h2>4. Procedure Details</h2>
+  <div class="fields">
+    <div class="field half">
+      <label for="blockPerformedBy">Block Performed By:</label>
+      <select id="blockPerformedBy" name="blockPerformedBy">
+        <option value="">Select</option>
+        <option value="attending">Attending</option>
+        <option value="resident">Resident/Fellow</option>
+        <option value="app">APP</option>
+      </select>
+    </div>
+    <div class="field half">
+      <label for="locationPerformed">Location Performed:</label>
+      <select id="locationPerformed" name="locationPerformed">
+        <option value="">Select</option>
+        <option value="ed-room">ED Room</option>
+        <option value="trauma-bay">Trauma Bay</option>
+        <option value="procedure-room">Procedure Room</option>
+      </select>
+    </div>
+    <div class="field half">
+      <label for="blockType">Block Type:</label>
+      <select id="blockType" name="blockType">
+        <option value="">Select</option>
+        <option value="interscalene">Interscalene</option>
+        <option value="supraclavicular">Supraclavicular</option>
+        <option value="infraclavicular">Infraclavicular</option>
+        <option value="axillary">Axillary</option>
+        <option value="digital">Digital</option>
+        <option value="hematoma-block">Hematoma Block</option>
+        <option value="femoral">Femoral</option>
+        <option value="fascia-iliaca">Fascia Iliaca</option>
+        <option value="adductor-canal">Adductor Canal</option>
+        <option value="sciatic">Sciatic</option>
+        <option value="ankle">Ankle Block</option> <!-- Changed text -->
+        <option value="truncal">Trunk (Serratus, ESP, TAP, etc.)</option>
+        <option value="other">Other (Specify Below or Pre-filled from Step 1)</option> <!-- Clarified 'Other' -->
+      </select>
+    </div>
+    <!-- Hidden secondary dropdowns for Step 4 -->
+    <div class="field half" id="blockTypeAnkleSpecificContainer" style="display: none;">
+        <label for="blockTypeAnkleSpecific">Specific Ankle Nerve(s):</label>
+        <select name="blockTypeAnkleSpecific" id="blockTypeAnkleSpecific">
+            <option value="">Select Specific Nerve(s)...</option>
+            <option value="ankle_tibial">Tibial</option>
+            <option value="ankle_sural">Sural</option>
+            <option value="ankle_saphenous">Saphenous</option>
+            <option value="ankle_peroneal_deep">Deep Peroneal</option>
+            <option value="ankle_peroneal_superficial">Superficial Peroneal</option>
+            <option value="ankle_all">All Nerves (Full Ankle Block)</option>
+        </select>
+    </div>
+    <div class="field half" id="blockTypeForearmSpecificContainer" style="display: none;">
+        <label for="blockTypeForearmSpecific">Specific Forearm Nerve(s):</label>
+        <select name="blockTypeForearmSpecific" id="blockTypeForearmSpecific">
+            <option value="">Select Specific Nerve(s)...</option>
+            <option value="forearm_median">Median</option>
+            <option value="forearm_ulnar">Ulnar</option>
+            <option value="forearm_radial">Radial</option>
+        </select>
+    </div>
+    <div class="field half" id="blockTypeWristSpecificContainer" style="display: none;">
+        <label for="blockTypeWristSpecific">Specific Wrist Nerve(s):</label>
+        <select name="blockTypeWristSpecific" id="blockTypeWristSpecific">
+            <option value="">Select Specific Nerve(s)...</option>
+            <option value="wrist_median">Median</option>
+            <option value="wrist_ulnar">Ulnar</option>
+            <option value="wrist_radial">Radial</option>
+        </select>
+    </div>
+    <!-- End Hidden secondary dropdowns -->
+    <div class="field half">
+      <label for="laterality">Laterality:</label>
+      <select id="laterality" name="laterality">
+        <option value="">Select</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="bilateral">Bilateral</option>
+      </select>
+    </div>
+  </div>
+  <h3>Aseptic Technique</h3>
+  <div class="field">
+    <label>Prep Used:</label>
+    <input type="checkbox" id="prepChlorhexidine" name="prepChlorhexidine"><label for="prepChlorhexidine">Chlorhexidine</label>
+    <input type="checkbox" id="prepBetadine" name="prepBetadine"><label for="prepBetadine">Betadine</label>
+    <input type="checkbox" id="prepAlcohol" name="prepAlcohol"><label for="prepAlcohol">Alcohol</label>
+  </div>
+  <div class="field">
+    <label>Sterile Barriers:</label>
+    <input type="checkbox" id="sterileGloves" name="sterileGloves"><label for="sterileGloves">Sterile Gloves</label>
+    <input type="checkbox" id="sterileProbeCover" name="sterileProbeCover"><label for="sterileProbeCover">Sterile Probe Cover</label>
+    <input type="checkbox" id="sterileDrape" name="sterileDrape"><label for="sterileDrape">Sterile Drape</label>
+  </div>
+  <h3>Ultrasound Guidance</h3>
+  <div class="field">
+    <input type="checkbox" id="useUltrasound" name="useUltrasound" onclick="toggleUltrasoundDetails()"><label for="useUltrasound">Used Ultrasound Guidance</label>
+  </div>
+  <div id="ultrasoundDetails" style="display: none;" class="fields"> <!-- Wrap details in fields -->
+    <div class="field half">
+      <label for="machineUsed">Machine Used:</label>
+      <input type="text" id="machineUsed" name="machineUsed" />
+    </div>
+    <div class="field half">
+      <label for="probeType">Probe Type:</label>
+      <select id="probeType" name="probeType">
+        <option value="">Select</option>
+        <option value="linear">Linear</option>
+        <option value="curvilinear">Curvilinear</option>
+      </select>
+    </div>
+    <div class="field half"> <!-- Adjust grid -->
+      <label for="needleApproach">Needle Approach:</label>
+      <select id="needleApproach" name="needleApproach">
+        <option value="">Select</option>
+        <option value="in-plane">In-Plane</option>
+        <option value="out-of-plane">Out-of-Plane</option>
+      </select>
+    </div>
+  </div>
+  <h3>Local Anesthetic</h3>
+  <div class="fields">
+    <div class="field third">
+      <label for="localAnesthetic">Medication:</label>
+      <select id="localAnesthetic" name="localAnesthetic">
+        <option value="">Select</option>
+        <option value="lidocaine">Lidocaine</option>
+        <option value="bupivacaine">Bupivacaine</option>
+        <option value="ropivacaine">Ropivacaine</option>
+        <option value="mepivacaine">Mepivacaine</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="field third">
+      <label for="concentration">Concentration (%):</label>
+      <input type="number" step="0.1" id="concentration" name="concentration" />
+    </div>
+    <div class="field third">
+      <label for="volumeUsed">Volume Used (mL):</label>
+      <input type="number" step="0.1" id="volumeUsed" name="volumeUsed" />
+    </div>
+  </div>
+  <div class="field">
+    <label>Additives:</label>
+    <input type="checkbox" id="epiAdditive" name="epiAdditive"><label for="epiAdditive">Epinephrine</label>
+    <input type="checkbox" id="dexAdditive" name="dexAdditive"><label for="dexAdditive">Dexamethasone</label>
+    <input type="checkbox" id="bicarbAdditive" name="bicarbAdditive"><label for="bicarbAdditive">Sodium Bicarbonate</label>
+  </div>
+</div>
+
+<!-- Step 5: Post-Procedure -->
+<div class="step" id="step5">
+  <h2>5. Post-Procedure Assessment & Plan</h2>
+  <div class="field">
+    <label>Immediate Complications:</label>
+    <input type="checkbox" id="noComplications" name="noComplications"><label for="noComplications">None</label>
+    <input type="checkbox" id="minorParesthesia" name="minorParesthesia"><label for="minorParesthesia">Minor (transient paresthesia)</label>
+    <input type="checkbox" id="vascularPuncture" name="vascularPuncture"><label for="vascularPuncture">Vascular Puncture (Minor)</label>
+    <input type="checkbox" id="hematoma" name="hematoma"><label for="hematoma">Hematoma</label>
+    <input type="checkbox" id="LAST" name="LAST"><label for="LAST">Signs of LAST</label>
+  </div>
+  <div class="fields">
+    <div class="field half">
+      <label for="postBlockPainScore">Post-Block Pain Score (0-10):</label>
+      <input type="number" id="postBlockPainScore" name="postBlockPainScore" min="0" max="10">
+    </div>
+    <div class="field half">
+      <label for="blockEfficacy">Block Efficacy:</label>
+      <select id="blockEfficacy" name="blockEfficacy">
+        <option value="">Select</option>
+        <option value="complete">Complete Sensory Loss</option>
+        <option value="partial">Partial Sensory Loss</option>
+        <option value="none">No Effect</option>
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label for="postBlockNeurovascular">Repeat Neurovascular Exam:</label>
+    <textarea id="postBlockNeurovascular" name="postBlockNeurovascular" placeholder="Compare to baseline..."></textarea>
+  </div>
+  <div class="field">
+    <label for="patientResponse">Patient Response:</label>
+    <select id="patientResponse" name="patientResponse">
+      <option value="">Select</option>
+      <option value="tolerated-well">Tolerated Well</option>
+      <option value="adverse-reaction">Adverse Reaction</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="planDisposition">Plan & Disposition:</label>
+    <textarea id="planDisposition" name="planDisposition" placeholder="e.g. Facilitated discharge, Pain control for admission, etc."></textarea>
+  </div>
+</div>
+
+<!-- Navigation Buttons -->
+<!-- Use Phantom actions styling -->
+<ul class="actions">
+  <li><button type="button" class="button" onclick="prevStep()">Back</button></li>
+  <li><button type="button" class="button primary" onclick="nextStep()" id="nextButton">Next</button></li>
+</ul> 

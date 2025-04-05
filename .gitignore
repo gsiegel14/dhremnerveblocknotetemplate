@@ -1,0 +1,21 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# SSH Keys and credentials
+KEY
+KEY.pub
+*.pem
+*.key
+*.crt
+*.csr
+id_*
+.ssh/
+
+# Other files to ignore
+cursorrules.mdc 
